@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Politique de confidentialité</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -26,6 +26,7 @@
 
         html, body {
             height: 100%;
+            width: 100%;
         }
 
         body {
@@ -38,8 +39,8 @@
         }
 
         .container {
-            width: 100%;
-            max-width: 1000px;
+            width: 95%;
+            max-width: 1400px;
             background: linear-gradient(145deg, #2f3136, #25262a);
             border-radius: 16px;
             padding: clamp(30px, 5vw, 60px);
@@ -47,7 +48,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            animation: fadeIn 1s ease-out;
+            animation: fadeIn 0.8s ease-out;
         }
 
         @keyframes fadeIn {
@@ -68,14 +69,20 @@
             color: var(--text-secondary);
             text-align: center;
             margin-bottom: clamp(15px, 2.5vw, 25px);
+            word-break: break-word;
+        }
+
+        .extension-link {
+            display: inline-block;
         }
 
         .extension-image {
-            margin: clamp(20px, 5vw, 35px) 0;
             max-width: 35%;
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            user-select: none;
+            pointer-events: auto;
         }
 
         .extension-image:hover {
@@ -93,9 +100,15 @@
             width: 100%;
         }
 
+        @media (max-width: 1024px) {
+            .extension-image {
+                max-width: 45%;
+            }
+        }
+
         @media (max-width: 768px) {
             .extension-image {
-                max-width: 50%;
+                max-width: 55%;
             }
         }
 
@@ -113,13 +126,13 @@
             }
 
             .extension-image {
-                max-width: 60%;
+                max-width: 70%;
             }
         }
 
-        @media (min-width: 1400px) {
+        @media (min-width: 1600px) {
             .container {
-                max-width: 1200px;
+                max-width: 1600px;
             }
         }
     </style>
@@ -145,8 +158,10 @@
             Aucune information n’est partagée avec des tiers.
         </p>
 
-        <img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" 
-             alt="Extension Chrome" class="extension-image">
+        <a href="https://chromewebstore.google.com/category/extensions" target="_blank" class="extension-link">
+            <img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" 
+                 alt="Extension Chrome" class="extension-image" draggable="false">
+        </a>
 
         <div class="footer">
             Dernière mise à jour : 14 décembre 2025
